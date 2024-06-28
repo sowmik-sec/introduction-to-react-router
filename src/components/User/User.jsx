@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 function User({ user }) {
-  const { name, email, phone } = user;
+  const { id, name, email, phone } = user;
   const userStyle = {
     border: "2px solid yellow",
     padding: "5px",
@@ -11,6 +13,7 @@ function User({ user }) {
       <h2>{name}</h2>
       <p>{email}</p>
       <p>{phone}</p>
+      <Link to={`/users/${id}`}>Show Details</Link>
     </div>
   );
 }
